@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=1200, initial-scale=1.0">
+    <meta name="viewport" content="width=850, initial-scale=1.0">
     <title>英语语法填空·终极通关笔记</title>
     <!-- 引入 Phosphor Icons 以还原图标 -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
@@ -25,64 +25,92 @@
             --tree-orange: #fff3e0;
             --tree-green: #e8f5e9;
             --tree-purple: #f3e5f5;
-            --tree-border-orange: #ffb74d;
-            
-            --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "PingFang SC", "Microsoft YaHei", sans-serif;
-        }
+        --tree-border-orange: #ffb74d;
+        
+        --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "PingFang SC", "Microsoft YaHei", sans-serif;
+    }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
 
-        body {
-            background-color: var(--bg-page);
-            font-family: var(--font-family);
-            color: var(--text-main);
-            display: flex;
-            justify-content: center;
-            padding: 20px 0;
-            line-height: 1.4;
-            font-size: 12px; /* 基础字号调小以容纳高密度信息 */
-        }
+    body {
+        background-color: var(--bg-page);
+        font-family: var(--font-family);
+        color: var(--text-main);
+        display: flex;
+        justify-content: center;
+        padding: 20px 0;
+        line-height: 1.4;
+        font-size: 11.5px; /* 基础字号微调以适配 A4 宽度 */
+    }
 
-        /* 主海报容器 */
-        .poster {
-            width: 1100px;
-            background-color: var(--bg-poster);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            padding: 20px;
-            border-radius: 8px;
-            position: relative;
-        }
+    /* 主海报容器 */
+    .poster {
+        width: 210mm; /* 精确设定为标准 A4 宽度 */
+        background-color: var(--bg-poster);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        padding: 15px 20px;
+        border-radius: 8px;
+        position: relative;
+    }
 
-        /* 顶部标题区 */
-        .header {
-            text-align: center;
-            margin-bottom: 15px;
-        }
+    /* 顶部标题区 */
+    .header {
+        text-align: center;
+        margin-bottom: 12px;
+    }
 
-        .main-title {
-            color: var(--text-red);
-            font-size: 32px;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 10px;
-        }
+    .main-title {
+        color: var(--text-red);
+        font-size: 28px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 8px;
+    }
 
-        .main-title i {
-            font-size: 36px;
-        }
+    .main-title i {
+        font-size: 32px;
+    }
 
-        .strategy-bar {
-            background-color: #f5f5f5;
-            border: 1px solid var(--text-main);
-            padding: 8px 20px;
-            border-radius: 20px;
+    .strategy-bar {
+        background-color: #f5f5f5;
+        border: 1px solid var(--text-main);
+        padding: 6px 15px;
+        border-radius: 20px;
+        display: inline-flex;
+        align-items: center;
+        font-weight: bold;
+        font-size: 12.5px;
+        color: var(--text-dark);
+    }
+
+    .strategy-bar span {
+        margin: 0 8px;
+        color: var(--text-muted);
+    }
+
+    /* 布局网格 (左右两列) */
+    .grid-container {
+        display: grid;
+        grid-template-columns: 46% 54%; /* 比例分配适配A4 */
+        gap: 15px;
+        margin-bottom: 0px;
+    }
+
+    /* 通用模块标题样式 */
+    .section-header {
+        background-color: var(--primary-dark);
+        color: white;
+        font-size: 14.5px;
+        font-weight: bold;
+        padding: 5px 12px;
+        border-radius: 20px;
             display: inline-flex;
             align-items: center;
             font-weight: bold;
@@ -300,40 +328,40 @@
             padding-left: 20px;
         }
         .linked-list::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 10px;
-            bottom: 10px;
-            width: 2px;
-            background-color: var(--tree-border-orange);
-        }
-        .linked-item {
-            background: white;
-            border: 1px solid var(--tree-border-orange);
-            border-radius: 15px;
-            padding: 4px 12px;
-            margin-bottom: 8px;
-            position: relative;
-            display: flex;
-            align-items: center;
-            font-size: 11px;
-            width: 180px;
-        }
-        .linked-item::before {
-            content: '';
-            position: absolute;
-            left: -20px;
-            top: 50%;
-            width: 20px;
-            height: 2px;
-            background-color: var(--tree-border-orange);
-        }
-        .linked-item i { color: var(--tree-border-orange); margin-right: 6px; font-size: 14px; }
-        .linked-item span { color: var(--text-muted); margin-left: auto; font-size: 10px; }
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 10px;
+        bottom: 10px;
+        width: 2px;
+        background-color: var(--tree-border-orange);
+    }
+    .linked-item {
+        background: white;
+        border: 1px solid var(--tree-border-orange);
+        border-radius: 15px;
+        padding: 4px 8px;
+        margin-bottom: 8px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        font-size: 11px;
+        width: 140px; /* 适配变窄的列宽 */
+    }
+    .linked-item::before {
+        content: '';
+        position: absolute;
+        left: -20px;
+        top: 50%;
+        width: 20px;
+        height: 2px;
+        background-color: var(--tree-border-orange);
+    }
+    .linked-item i { color: var(--tree-border-orange); margin-right: 4px; font-size: 13px; }
+    .linked-item span { color: var(--text-muted); margin-left: auto; font-size: 9.5px; }
 
-        /* 2. 右侧有提示词结构 */
-        .two-col-header {
+    /* 2. 右侧有提示词结构 */
+    .two-col-header {
             display: flex;
             justify-content: space-between;
             border-bottom: 2px solid var(--primary-dark);
@@ -378,52 +406,17 @@
             background: white;
         }
         .card-title {
-            font-weight: bold;
-            color: var(--primary-dark);
-            margin-bottom: 8px;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 4px;
-        }
+        font-weight: bold;
+        color: var(--primary-dark);
+        margin-bottom: 8px;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 4px;
+    }
 
-        /* 底部检查清单 */
-        .footer-checklist {
-            margin-top: 20px;
-            border: 2px solid var(--primary-dark);
-            border-radius: 6px;
-            padding: 15px;
-            background: white;
-        }
-        .checklist-title {
-            background: var(--text-orange);
-            color: white;
-            display: inline-block;
-            padding: 4px 15px;
-            border-radius: 15px;
-            font-weight: bold;
-            margin-bottom: 10px;
-            margin-top: -25px; /* Pull up to overlap border */
-        }
-        .check-items {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-        }
-        .check-item {
-            display: flex;
-            align-items: flex-start;
-            width: 19%;
-            font-size: 11px;
-        }
-        .check-item input[type="checkbox"] {
-            margin-right: 6px;
-            margin-top: 2px;
-            accent-color: var(--primary-dark);
-        }
-
-        /* 通用修饰 */
-        .highlight-bg { background-color: #fff9c4; padding: 0 4px; border-radius: 2px; }
-        .text-align-left { text-align: left; }
-    </style>
+    /* 通用修饰 */
+    .highlight-bg { background-color: #fff9c4; padding: 0 4px; border-radius: 2px; }
+    .text-align-left { text-align: left; }
+</style>
 </head>
 <body>
 
@@ -789,27 +782,13 @@
                     <tr><td><b>tasty</b> <span style="color:#666">(v. 品尝)</span></td><td><b>tasty</b> (adj. 美味的)</td><td>去 e 加 y</td></tr>
                     <tr><td><b>recognize</b> <span style="color:#666">(v. 认出)</span></td><td><b>recognition</b> (n.)</td><td>拼写易错</td></tr>
                     <tr><td><b>explain</b> <span style="color:#666">(v. 解释)</span></td><td><b>explanation</b> (n.)</td><td>去掉 i</td></tr>
-                    <tr><td><b>pronounce</b> <span style="color:#666">(v. 发音)</span></td><td><b>pronunciation</b> (n.)</td><td class="text-red">注意拼写，中间无 o</td></tr>
-                </table>
+                <tr><td><b>pronounce</b> <span style="color:#666">(v. 发音)</span></td><td><b>pronunciation</b> (n.)</td><td class="text-red">注意拼写，中间无 o</td></tr>
+            </table>
 
-            </div>
         </div>
-
-        <!-- 底部检查清单 -->
-        <div class="footer-checklist">
-            <div class="checklist-title">考场快速检查清单 (做完最后自查)</div>
-            <div class="check-items">
-                <label class="check-item"><input type="checkbox"> <span>确认该空作谓语<br>还是非谓语？</span></label>
-                <label class="check-item"><input type="checkbox"> <span><b>若是非谓语：</b>逻辑主语<br>找对了吗？主动还是被动？</span></label>
-                <label class="check-item"><input type="checkbox"> <span>提示词是名词或形容词时，<br>有没有思考过<b>单复数</b>或<b>比较级</b>变形？</span></label>
-                <label class="check-item"><input type="checkbox"> <span>从句内缺不缺成分？<br>先行词到底是什么？</span></label>
-                <label class="check-item"><input type="checkbox"> <span>是否踩了 consist of, date back to<br>这类"绝对无被动"动词的坑？</span></label>
-                <label class="check-item"><input type="checkbox"> <span>although 引导从句后，<br>主句有没有手滑写上 but？</span></label>
-                <label class="check-item" style="width: 20%;"><input type="checkbox"> <span>only/most/all/最高级修饰先行词时，<br>定语从句确认用的是 <b>that</b> 吗？</span></label>
-            </div>
-        </div>
-
     </div>
+
+</div>
 
 </body>
 </html>
