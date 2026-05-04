@@ -403,6 +403,12 @@
            打印模式样式修复：彻底解决大面积空白和断层 
            ------------------------------------------- */
         @media print {
+            /* 强制开启浏览器背景色打印，防止元素变成透明/白底而消失！ */
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
             /* 设定精确 A4 尺寸，减少页边距保证装得下 */
             @page {
                 size: A4 portrait;
